@@ -8,6 +8,7 @@ root = Tk()
 
 #Creation of Menu Object
 mymenu = Menu(root)
+root.config(menu = mymenu)
 
 #Add menu object to the root configuration
 
@@ -36,7 +37,7 @@ editmenu.add_command(label = "Paste", command = function1)
 
 
 
-root.config(menu = mymenu)
+
 
 
 root.mainloop()
