@@ -14,16 +14,29 @@ mymenu = Menu(root)
 
 #Pass main menu to this sub menu
 #Creation of submenu object
-submenu = Menu(mymenu, tearoff = 0)
+filemenu = Menu(mymenu)
 
-submenu.add_command(label = " New Project", command = function1)
+mymenu.add_cascade(label = "File", menu = filemenu)
+filemenu.add_command(label = " New Project", command = function1)
 
-submenu.add_separator() # to have a separator file for classification of menu items
+filemenu.add_separator() # to have a separator file for classification of menu items
 
-submenu.add_command(label = " Save", command = function1)
+filemenu.add_command(label = " Save", command = function1)
 
-mymenu.add_cascade(label = "File", menu = submenu)
+
+editmenu = Menu(mymenu)
+mymenu.add_cascade(label = "Edit", menu = editmenu)
+editmenu.add_command(label = "Copy", command = function1)
+
+editmenu.add_separator() # to have a separator file for classification of menu items
+
+editmenu.add_command(label = "Paste", command = function1)
+
+
+
+
 
 root.config(menu = mymenu)
+
 
 root.mainloop()
